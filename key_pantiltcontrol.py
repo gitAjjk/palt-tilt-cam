@@ -1,3 +1,9 @@
+""" pi@rpirtgZ:~/palt-tilt-cam $
+    /usr/bin/env /home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 
+    /home/pi/.vscode-server/extensions/ms-python.debugpy-2024.10.0/bundled/libs/debugpy/adapter/../../debugpy/launcher
+      42017 
+    -- /home/pi/palt-tilt-cam/key_pantiltcontrol.py """
+# Werkt ook: /home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 -- /home/pi/palt-tilt-cam/key_pantiltcontrol.py
 #Raspberry-Pi pan and tilt using arrow keys script
 #must be run from Pi's terminal!
 #use code "python pantilt.py" after you cd into the correct folder!
@@ -8,20 +14,22 @@
 import curses
 import os
 import time
-import picamera
+import picamera # $ sudo pip install picamera
 
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 from PCA9685 import PCA9685
 
-#setting up camera
-camera = picamera.PiCamera()
-camera.resolution = (512, 384)
-camera.start_preview()
+bCameraAvailable = True
+if (bCameraAvailable):
+    #setting up camera
+    camera = picamera.PiCamera() # Camera is not enabled. Try running 'sudo raspi-config' and ensure that the camera has been enabled.
+    camera.resolution = (512, 384)
+    camera.start_preview()
 
-#flipping the camera for so its not upside down
-# camera.vflip = True
-# camera.hflip = True
+    #flipping the camera for so its not upside down
+    # camera.vflip = True
+    # camera.hflip = True
 
 # get the curses screen window
 screen = curses.initscr()
@@ -62,10 +70,13 @@ try:
             break
         if char == ord('p'):
             #if p is pressed take a photo!
-            camera.capture('image%s.jpg' % pic)
-            pic = pic +1
-            screen.addstr(0, 0, 'picture taken! ')
-            
+            if (bCameraAvailable):
+                camera.capture('image%s.jpg' % pic)
+                pic = pic +1
+                screen.addstr(0, 0, 'picture taken! ')
+            else:
+                screen.addstr(0, 0, 'No picture taken! ')
+
         elif char == curses.KEY_RIGHT:
             screen.addstr(0, 0, 'right ')
             current_PAN = max(min_PAN, current_PAN - step_PAN)
@@ -86,8 +97,9 @@ try:
             
         elif char == curses.KEY_DOWN:
             screen.addstr(0, 0, 'up ')
-            current_TILT = min(max_TILT, current_TILT + step_TILT)
-            pwm.setRotationAngle(0, current_TILT) #TILT 
+            if (current_TILT < 130) :
+                current_TILT = min(max_TILT, current_TILT + step_TILT)
+                pwm.setRotationAngle(0, current_TILT) #TILT 
             time.sleep(0.001)
 finally:
     # shut down cleanly
