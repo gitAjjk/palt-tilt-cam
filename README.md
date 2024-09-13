@@ -1,4 +1,6 @@
 # Aj
+Origineel [github.com/v-thiennp12/palt-tilt-cam](https://github.com/v-thiennp12/palt-tilt-cam)  
+
 Nodig:
 - Numpy < 2, OpenCv
 - raspi-config > Legacy camera enabled: YES
