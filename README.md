@@ -1,4 +1,11 @@
+# Aj
+|||
+|-|-|  
+| key_pantiltcontrol.py | Test servo's en camera |  
+| face_tracking_simple.py | Herkent gezichten en teken t kadertje eromheen |  
+|cam_pantiltcontrol.py|Volgt gezicht dmv servo's|
 
+# V-THIENNP
 ## how to build a face-tracking with Raspberry and OpenCV
 
 This is my very first project on Raspberry. My motivations come from the article of [Leigh Johnson](undefined) :
