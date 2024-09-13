@@ -1,4 +1,7 @@
 # Aj
+Nodig:
+- Numpy < 2, OpenCv
+- raspi-config > Legacy camera enabled: YES
 
 |||
 |-|-|  
