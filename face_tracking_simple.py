@@ -1,3 +1,4 @@
+#aj 240913:
 """ pi@rpirtgZ:~/palt-tilt-cam $  
     cd /home/pi/palt-tilt-cam ; 
     /usr/bin/env 
@@ -30,7 +31,7 @@ import os
 # faceCascade = cv2.CascadeClassifier('data/haarcascade_frontalface_default.xml')
 # faceCascade.load('data/haarcascade_frontalface_default.xml')
 
-cascPath=os.path.dirname(cv2.__file__)+"/data/haarcascade_frontalface_default.xml"
+cascPath=os.path.dirname(cv2.__file__)+"/data/haarcascade_frontalface_default.xml" #/home/pi/rpi-deep-pantilt/.ajvenv/lib/python3.9/site-packages/cv2/data/haarcascade_frontalface_default.xml
 faceCascade = cv2.CascadeClassifier(cascPath)
 # Read the input image
 

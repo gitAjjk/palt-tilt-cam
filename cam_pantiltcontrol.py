@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# Aj
+# $ export DISPLAY=:0
+# $ /home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 -- /home/pi/palt-tilt-cam/cam_pantiltcontrol.py
+
 """
 Created on Sun Jul  5 00:33:26 2020
 
@@ -135,7 +139,7 @@ try:
                 if rectangle_found == 1:                    
                     print(' x y previous ', previous_x, previous_y)                    
 # ========================================================================================
-                    # stay away from me !
+                    # stay away from me !qq
 #                     delta_x = previous_x - x
 #                     delta_y = previous_y - y
 
