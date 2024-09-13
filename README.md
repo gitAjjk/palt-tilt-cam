@@ -1,4 +1,23 @@
+# Aj
+Origineel [github.com/v-thiennp12/palt-tilt-cam](https://github.com/v-thiennp12/palt-tilt-cam)  
 
+Nodig:
+- Numpy < 2, OpenCv
+- raspi-config > Legacy camera enabled: YES
+
+|||
+|-|-|  
+| key_pantiltcontrol.py | Test servo's en camera |  
+| face_tracking_simple.py | Herkent gezichten en teken t kadertje eromheen |  
+|cam_pantiltcontrol.py|Volgt gezicht dmv servo's|
+
+Voor opencv output: 
+> $ `export DISPLAY=:0`
+
+Run met juiste [virtual environment](https://github.com/gitAjjk/ajtest/blob/main/Python%20Virtual%20environment.md), b.v:  
+> pi@rpirtgZ:~ $ `/home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 -- /home/pi/palt-tilt-cam/cam_pantiltcontrol.py`  
+
+# V-THIENNP
 ## how to build a face-tracking with Raspberry and OpenCV
 
 This is my very first project on Raspberry. My motivations come from the article of [Leigh Johnson](undefined) :
