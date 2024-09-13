@@ -9,7 +9,11 @@ Nodig:
 | face_tracking_simple.py | Herkent gezichten en teken t kadertje eromheen |  
 |cam_pantiltcontrol.py|Volgt gezicht dmv servo's|
 
-Run met juiste [virtual environment](https://github.com/gitAjjk/ajtest/blob/main/Python%20Virtual%20environment.md), b.v: pi@rpirtgZ:~ $ `/home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 -- /home/pi/palt-tilt-cam/cam_pantiltcontrol.py`  
+Voor opencv output: 
+> $ `export DISPLAY=:0`
+
+Run met juiste [virtual environment](https://github.com/gitAjjk/ajtest/blob/main/Python%20Virtual%20environment.md), b.v:  
+> pi@rpirtgZ:~ $ `/home/pi/rpi-deep-pantilt/.ajvenv/bin/python3.9 -- /home/pi/palt-tilt-cam/cam_pantiltcontrol.py`  
 
 # V-THIENNP
 ## how to build a face-tracking with Raspberry and OpenCV
